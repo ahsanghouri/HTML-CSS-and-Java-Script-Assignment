@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS 30-34</title>
+</head>
+
+<body>
+    <script>
+        // var name = prompt("Type Your Name", "Ameen Alam")
+        // var date = Number(prompt("Type Your DOB (date)", "24"))
+        // var month = Number(prompt("Type Your DOB (month)", "05"))
+        // var year = Number(prompt("Type Your DOB (year)", "1999"))
+        // // newDate = new Date("may 24, 2019 0:00:00")
+        // var newDate = new Date()
+        // var newDate_getFullYear = newDate.getFullYear()
+        // var newDate_getHours = newDate.getHours()
+        // var newDate_getMonth = newDate.getMonth()
+        // var newDate_getDate = newDate.getDate()
+        // if (newDate_getHours >= 5 && newDate_getHours <= 11) {
+        //     console.log("Hello " + name + " Good Morning")
+        // }
+        // else if (newDate_getHours >= 12 && newDate_getHours <= 16) {
+        //     console.log("Hello " + name + " Good After Noon")
+        // }
+        // else if (newDate_getHours >= 16 && newDate_getHours <= 19) {
+        //     console.log("Hello " + name + " Good Evening")
+        // }
+        // else if (newDate_getHours >= 19 || newDate_getHours <= 4) {
+        //     console.log("Hello " + name + " Good Night")
+        // }
+        // var dob = new Date(year, month - 1, date)
+        // if (dob != "Invalid Date") {
+        //     console.log("your dob is ", dob)
+        // }
+        // var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        // var secondDate = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate(), newDate.getHours());
+        // var diffDays = Math.round(Math.abs((dob - secondDate) / oneDay));
+        // console.log("You are " + (newDate.getFullYear() - dob.getFullYear()) + " years " + (newDate.getMonth() - dob.getMonth()) + " Month " + (dob.getDate() - newDate.getDate()) + " Days " + (newDate.getHours() - dob.getHours()) + " Hours " + (newDate.getMinutes() - dob.getMinutes()) + " Minutes " + (newDate.getSeconds() - dob.getSeconds()) + " Seconds old")
+        // console.log("Your Age in Days " + diffDays)
+        // if (newDate_getMonth + 1 == month && newDate_getDate == date) {
+        //     console.log("happy Birth Day " + name + ".  Today Is Your " + (newDate.getFullYear() - dob.getFullYear()) +"th Birthday" )
+        // } else {
+        //     var countDownDateNextYear = new Date(month + " " + date + ", " + (newDate_getFullYear + 1) + " 00:00:00").getTime();
+        //     var countDownDate = new Date(month + " " + date + ", " + (newDate_getFullYear) + " 00:00:00").getTime();
+        //     var now = newDate.getTime();
+        //     var distance;
+        //     if ((countDownDate - newDate) > 0) {
+        //         distance = countDownDate - now;
+        //         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //         console.log("How much time left in your next birthday? " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds")
+        //     } else {
+        //         distance = countDownDateNextYear - now;
+        //         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //         console.log("How much time left in your next birthday? " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds")
+        //     }
+        // }
+
+
+
+        var name = prompt("Enter Your Name");
+        var date = prompt("Enter Your Date Of Birth");
+        var month = prompt("Enter Your Month Of Birth");
+        var year = prompt("Enter Your Year Of Birth");
+        var Months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var dob = new Date(Months[month] + date + ", " + year);
+        console.log(dob)
+        
+        var currentDate = new Date();
+        var msDiff = currentDate.getTime() - dob.getTime();
+        var sec = msDiff / 1000;
+        var minutes = msDiff / (1000 * 60);
+        var hours = msDiff / (1000 * 60 * 60);
+        var days = msDiff / (1000 * 60 * 60 * 24);
+        var years = msDiff / (1000 * 60 * 60 * 24 * 365)
+        var months = (((msDiff / (1000 * 60 * 60 * 24) / 365) * 12) % 12)
+        console.log("you are" + years + " " + months + " month ", days + " days " + hours + " hours " + minutes + " minutes " + sec + " seconds ")
+
+        var nextYear = currentDate.getFullYear() + 1;
+        console.log(nextYear)
+        var NextDob = new Date(Months[month] + date + ", " + nextYear);
+        console.log(NextDob)
+        var msDiffNext = NextDob.getTime() - currentDate.getTime();
+        var secNext = msDiffNext / 1000;
+        var minutesNext = msDiffNext / (1000 * 60);
+        var hoursNext = msDiffNext / (1000 * 60 * 60);
+        var daysNext = msDiffNext / (1000 * 60 * 60 * 24);
+        var yearsNext = msDiffNext / (1000 * 60 * 60 * 24 * 365)
+        var monthsNext = (((msDiffNext / (1000 * 60 * 60 * 24) / 365) * 12) % 12)
+        console.log(monthsNext + " month ", daysNext + " days " + hoursNext + " hours " + minutesNext + " minutes " + secNext + " seconds ")
+
+    </script>
+
+    <h3>JS Assignment ch 30 to 34</h3>
+</body>
+
+</html>

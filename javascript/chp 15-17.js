@@ -1,0 +1,10 @@
+var courses = [];
+var course1 = prompt("Course 1", "Computer");
+var course2 = prompt("Course 2", "English");
+var course3 = prompt("Course 3", "Urdu");
+courses.push(course1);
+courses.push(course2);
+courses.push(course3);
+alert("Your Computer Marks are " + courses[0]);
+alert("Your English Marks are " + courses[1]);
+alert("Your Urdu Marks are " + courses[2]);

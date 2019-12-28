@@ -1,0 +1,17 @@
+var name = prompt("Enter your name");
+var date = prompt("Enter your date of birth");
+var month = prompt("Enter your Month of birth");
+var year = prompt("Enter your year of birth");
+var dob = month + " " +date + "," +year;
+alert("Hello " + name + "Good Morning");
+dob = new Date(dob);
+alert("Your Date of Birth is : " +dob);
+var current_date = new Date();
+var msDiff = current_date.getTime() - dob.getTime();
+var sec = msDiff / 1000;
+var minute = msDiff / (1000 * 60);
+var hour = msDiff / (1000 * 60 * 60);
+var day = msDiff / (1000 * 60 * 60 * 24);
+var month = msDiff / (1000 * 60 * 60 * 24 * 30);
+var year = msDiff / (1000 * 60 * 60 * 24 * 30 * 365);
+alert("You are " +year+"Years " + month + "months" + day + "days" + hour + "Hours old");
